@@ -11,8 +11,10 @@ def clean_ingredients(dish_name, dish_ingredients):
     This function should return a `tuple` with the name of the dish as the first item,
     followed by the de-duped `set` of ingredients as the second item.
     """
-
-    return ()
+    empty_set = set()
+    for i in dish_ingredients:
+        empty_set.add(i)
+    return dish_name, empty_set
 
 
 def check_drinks(drink_name, drink_ingredients):
@@ -26,6 +28,25 @@ def check_drinks(drink_name, drink_ingredients):
     name followed by "Cocktail" (includes alcohol).
 
     """
+    list=[]
+    for a in ALCOHOLS:
+        list.append(a)
+    
+        
+    for i, alc in enumerate(list):
+        if list[i] in drink_ingredients:
+            break
+    if list[i] in drink_ingredients:
+        return f"{drink_name} Cocktail"
+    else:
+        return f"{drink_name} Mocktail"
 
-    return ""
+            
+        
+         
+
+
+
+
+
 
